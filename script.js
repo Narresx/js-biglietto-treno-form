@@ -16,7 +16,13 @@ const age = document.getElementById('age');
 const km = document.getElementById('km');
 const names = document.getElementById('name');
 
+// Dettagli biglietto
 
+const dName = document.getElementById('d-name');
+const dOffer = document.getElementById('d-offer');
+const dCarriage = document.getElementById('d-carriage');
+const dCode = document.getElementById('d-code');
+const dPrice = document.getElementById('d-price');
 // Recuperiamo i dati inseriti con il bottone conferma
 
 const confirmButton = document.getElementById('confirm');
@@ -45,6 +51,21 @@ confirmButton.addEventListener('click', function () {
     ticketPrice = ticketPrice.toFixed(2); // Per indicare i numeri decimali, in questo caso 2 decimali dopo la virgola.
     console.log(ticketPrice);
 
+    // Completiamo i dettagli del biglietto
+
+    dName.innerText = inputName;
+
+    if (inputAge == 'Maggiorenne') {
+        dOffer.innerText = `Standard`;
+    } else if (inputAge == 'Minorenne') {
+        dOffer.innerText = `Sconto Minorenni`;
+    } else {
+        dOffer.innerText = `Sconto Senile`;
+    }
+
+    dCarriage.innerText = Math.floor(Math.random() * 25) + 1;
+    dCode.innerText = Math.floor(Math.random() * 9000) + 1;
+    dPrice.innerText = ticketPrice
 })
 
 // Togliamo i dati dell'utente

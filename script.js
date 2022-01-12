@@ -14,36 +14,48 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 const age = document.getElementById('age');
 const km = document.getElementById('km');
-const name = document.getElementById('name');
+const names = document.getElementById('name');
 
-// Recuperiamo i dati dell'utente
-
-const inputAge = age.value;
-console.log(inputAge);
-const inputKm = km.value;
-console.log(inputKm);
-const inputName = name.value;
-console.log(inputName);
 
 // Recuperiamo i dati inseriti con il bottone conferma
 
 const confirmButton = document.getElementById('confirm');
-console.log(confirmButton);
+
+confirmButton.addEventListener('click', function () {
+    // Recuperiamo i dati dell'utente
+
+    const inputAge = age.value;
+    console.log(inputAge);
+    const inputKm = km.value;
+    console.log(inputKm);
+    const inputName = names.value;
+    console.log(inputName);
+
+    let ticketPrice = inputKm * 0.21;
+    console.log(ticketPrice);
+
+    if (age === 'Minorenne') {
+        ticketPrice = ticketPrice * 0.8;
+    } else if (age === 'Superiore a 65') {
+        ticketPrice = ticketPrice * 0.6;
+    }
+
+    console.log(ticketPrice);
+
+    ticketPrice = ticketPrice.toFixed(2); // Per indicare i numeri decimali, in questo caso 2 decimali dopo la virgola.
+    console.log(ticketPrice);
+
+})
+
+// Togliamo i dati dell'utente
 
 const denyButton = document.getElementById('deny');
-console.log(denyButton);
 
+denyButton.addEventListener('click', function () {
 
-let ticketPrice = km * 0.21;
-console.log(ticketPrice);
-
-if (age === 'Minorenne') {
-    ticketPrice = ticketPrice * 0.8;
-} else if (age === 'Superiore a 65') {
-    ticketPrice = ticketPrice * 0.6;
-}
-
-console.log(ticketPrice);
-
-ticketPrice = ticketPrice.toFixed(2); // Per indicare i numeri decimali, in questo caso 2 decimali dopo la virgola.
-console.log(ticketPrice);
+    if (age && km && names) {
+        age.value = '';
+        km.value = '';
+        names.value = '';
+    }
+})

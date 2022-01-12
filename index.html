@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Biglietto Treno</title>
+</head>
+
+<body>
+
+    <div>
+        <div>
+            <label for="name">Inserisci il tuo nome e cognome.</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="km">Inserisci i Chilometri che vuoi percorrere.</label>
+            <input type="number" id="km" form="km">
+        </div>
+        <div>
+            <label for="age">Indica la tua età tra le opzioni</label>
+            <select name="age" id="age">
+                <option value="adult">Maggiorenne</option>
+                <option value="underage">Minorenne</option>
+                <option value="overage">Superiore a 65</option>
+            </select>
+        </div>
+        <div>
+            <button id="confirm">Conferma</button>
+            <button id="deny">Annulla</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

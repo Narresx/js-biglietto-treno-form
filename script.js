@@ -40,10 +40,12 @@ confirmButton.addEventListener('click', function () {
     let ticketPrice = inputKm * 0.21;
     console.log(ticketPrice);
 
-    if (age === 'Minorenne') {
+    if (inputAge == 'underage') {
         ticketPrice = ticketPrice * 0.8;
-    } else if (age === 'Superiore a 65') {
+    } else if (inputAge == 'overage') {
         ticketPrice = ticketPrice * 0.6;
+    } else {
+        ticketPrice = ticketPrice;
     }
 
     console.log(ticketPrice);
@@ -55,9 +57,9 @@ confirmButton.addEventListener('click', function () {
 
     dName.innerText = inputName;
 
-    if (inputAge == 'Maggiorenne') {
+    if (inputAge == 'adult') {
         dOffer.innerText = `Standard`;
-    } else if (inputAge == 'Minorenne') {
+    } else if (inputAge == 'underage') {
         dOffer.innerText = `Sconto Minorenni`;
     } else {
         dOffer.innerText = `Sconto Senile`;
